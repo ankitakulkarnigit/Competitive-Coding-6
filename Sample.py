@@ -24,6 +24,16 @@
 #     - perm[1] = 2 is divisible by i = 1
 #     - i = 2 is divisible by perm[2] = 1
 
+# Recursive placement: For position pivot (1 to n), try placing each unused number i that satisfies the beautiful condition:
+# (pivot % i == 0 or i % pivot == 0)
+# Track used numbers: visited array ensures each number is used exactly once
+# Count valid permutations: When pivot > n, a complete valid arrangement is found → increment count
+# The constraints (i % pos == 0 or pos % i == 0) drastically reduce the search space compared to brute-force permutation generation. 
+
+# Time Complexity: O(k) where k is the number of valid permutations (pruned search space)
+# Space Complexity: O(n) for recursion stack + visited array
+
+
 
 class Solution:
     def __init__(self):
@@ -49,6 +59,5 @@ class Solution:
         
 
 
-            
             
             
